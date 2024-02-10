@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_banners_hero_banners",
+  "info": {
+    "displayName": "Hero Banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "buttonPrompt": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    },
+    "isImageLeft": {
+      "type": "boolean",
+      "default": true
+    },
+    "imagePath": {
+      "type": "string"
+    },
+    "imageAlt": {
+      "type": "string"
+    }
+  }
+}
