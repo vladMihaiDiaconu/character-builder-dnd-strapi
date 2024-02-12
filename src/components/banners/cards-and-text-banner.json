@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_banners_cards_and_text_banners",
+  "info": {
+    "displayName": "Cards And Text Banner"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "displayCardsArray": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cards.display-card"
+    }
+  }
+}

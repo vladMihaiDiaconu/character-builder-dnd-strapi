@@ -55,7 +55,9 @@
       "type": "dynamiczone",
       "components": [
         "banners.hero-banner",
-        "misc.stripe"
+        "misc.stripe",
+        "cards.display-card",
+        "banners.cards-and-text-banner"
       ]
     }
   }

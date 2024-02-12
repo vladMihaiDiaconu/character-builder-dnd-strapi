@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_cards_display_cards",
+  "info": {
+    "displayName": "Display Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "buttonLink": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "imageAlt": {
+      "type": "string"
+    }
+  }
+}

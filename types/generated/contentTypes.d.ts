@@ -1075,7 +1075,14 @@ export interface ApiPagePage extends Schema.CollectionType {
     structuredData: Attribute.JSON;
     metaViewport: Attribute.String;
     canonicalURL: Attribute.String;
-    blocks: Attribute.DynamicZone<['banners.hero-banner', 'misc.stripe']>;
+    blocks: Attribute.DynamicZone<
+      [
+        'banners.hero-banner',
+        'misc.stripe',
+        'cards.display-card',
+        'banners.cards-and-text-banner'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
