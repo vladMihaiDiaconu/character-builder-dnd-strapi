@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_features",
+  "info": {
+    "singularName": "class-feature",
+    "pluralName": "class-features",
+    "displayName": "Class Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "classFeature": {
+      "type": "json"
+    }
+  }
+}

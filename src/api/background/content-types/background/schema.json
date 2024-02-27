@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "backgrounds",
+  "info": {
+    "singularName": "background",
+    "pluralName": "backgrounds",
+    "displayName": "Background"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "backgroundName": {
+      "type": "string"
+    },
+    "features": {
+      "type": "blocks"
+    },
+    "personalityTraits": {
+      "type": "json"
+    },
+    "ideals": {
+      "type": "json"
+    },
+    "bonds": {
+      "type": "json"
+    },
+    "flaws": {
+      "type": "json"
+    }
+  }
+}

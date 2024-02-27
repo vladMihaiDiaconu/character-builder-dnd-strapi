@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feats",
+  "info": {
+    "singularName": "feat",
+    "pluralName": "feats",
+    "displayName": "Feat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feat": {
+      "type": "json"
+    }
+  }
+}

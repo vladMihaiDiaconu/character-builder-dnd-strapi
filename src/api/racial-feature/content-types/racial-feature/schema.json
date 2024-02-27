@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "racial_features",
+  "info": {
+    "singularName": "racial-feature",
+    "pluralName": "racial-features",
+    "displayName": "Racial Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "racialFeatureName": {
+      "type": "string"
+    },
+    "racialFeatureEffect": {
+      "type": "json"
+    }
+  }
+}

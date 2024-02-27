@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "characters",
+  "info": {
+    "singularName": "character",
+    "pluralName": "characters",
+    "displayName": "Character",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "characterName": {
+      "type": "string"
+    },
+    "race": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::race.race"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class.class"
+    },
+    "background": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::background.background"
+    },
+    "backstory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::backstory.backstory"
+    },
+    "feats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feat.feat"
+    },
+    "characterAlignment": {
+      "type": "enumeration",
+      "enum": [
+        "Lawful Good",
+        "Neutral Good",
+        "Chaotic Good",
+        "Lawful Neutral",
+        "Neutral",
+        "Chaotic Neutral",
+        "Lawful Evil",
+        "Neutral Evil",
+        "Chaotic Evil"
+      ]
+    }
+  }
+}

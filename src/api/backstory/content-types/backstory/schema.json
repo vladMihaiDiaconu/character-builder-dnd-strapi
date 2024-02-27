@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "backstories",
+  "info": {
+    "singularName": "backstory",
+    "pluralName": "backstories",
+    "displayName": "Backstory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

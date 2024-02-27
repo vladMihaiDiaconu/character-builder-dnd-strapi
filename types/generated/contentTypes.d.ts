@@ -1023,6 +1023,230 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiBackgroundBackground extends Schema.CollectionType {
+  collectionName: 'backgrounds';
+  info: {
+    singularName: 'background';
+    pluralName: 'backgrounds';
+    displayName: 'Background';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    backgroundName: Attribute.String;
+    features: Attribute.Blocks;
+    personalityTraits: Attribute.JSON;
+    ideals: Attribute.JSON;
+    bonds: Attribute.JSON;
+    flaws: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::background.background',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::background.background',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBackstoryBackstory extends Schema.CollectionType {
+  collectionName: 'backstories';
+  info: {
+    singularName: 'backstory';
+    pluralName: 'backstories';
+    displayName: 'Backstory';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::backstory.backstory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::backstory.backstory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCharacterCharacter extends Schema.CollectionType {
+  collectionName: 'characters';
+  info: {
+    singularName: 'character';
+    pluralName: 'characters';
+    displayName: 'Character';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    characterName: Attribute.String;
+    race: Attribute.Relation<
+      'api::character.character',
+      'oneToOne',
+      'api::race.race'
+    >;
+    classes: Attribute.Relation<
+      'api::character.character',
+      'oneToMany',
+      'api::class.class'
+    >;
+    background: Attribute.Relation<
+      'api::character.character',
+      'oneToOne',
+      'api::background.background'
+    >;
+    backstory: Attribute.Relation<
+      'api::character.character',
+      'oneToOne',
+      'api::backstory.backstory'
+    >;
+    feats: Attribute.Relation<
+      'api::character.character',
+      'oneToMany',
+      'api::feat.feat'
+    >;
+    characterAlignment: Attribute.Enumeration<
+      [
+        'Lawful Good',
+        'Neutral Good',
+        'Chaotic Good',
+        'Lawful Neutral',
+        'Neutral',
+        'Chaotic Neutral',
+        'Lawful Evil',
+        'Neutral Evil',
+        'Chaotic Evil'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::character.character',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::character.character',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClassClass extends Schema.CollectionType {
+  collectionName: 'classes';
+  info: {
+    singularName: 'class';
+    pluralName: 'classes';
+    displayName: 'Class';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String;
+    flavorText: Attribute.Text;
+    hitDice: Attribute.String;
+    class_features: Attribute.Relation<
+      'api::class.class',
+      'oneToMany',
+      'api::class-feature.class-feature'
+    >;
+    level: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::class.class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::class.class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClassFeatureClassFeature extends Schema.CollectionType {
+  collectionName: 'class_features';
+  info: {
+    singularName: 'class-feature';
+    pluralName: 'class-features';
+    displayName: 'Class Feature';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    classFeature: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::class-feature.class-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::class-feature.class-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFeatFeat extends Schema.CollectionType {
+  collectionName: 'feats';
+  info: {
+    singularName: 'feat';
+    pluralName: 'feats';
+    displayName: 'Feat';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    feat: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::feat.feat', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::feat.feat', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -1093,6 +1317,65 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiRaceRace extends Schema.CollectionType {
+  collectionName: 'races';
+  info: {
+    singularName: 'race';
+    pluralName: 'races';
+    displayName: 'Race';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    raceName: Attribute.String;
+    racial_features: Attribute.Relation<
+      'api::race.race',
+      'oneToMany',
+      'api::racial-feature.racial-feature'
+    >;
+    flavorText: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::race.race', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::race.race', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRacialFeatureRacialFeature extends Schema.CollectionType {
+  collectionName: 'racial_features';
+  info: {
+    singularName: 'racial-feature';
+    pluralName: 'racial-features';
+    displayName: 'Racial Feature';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    racialFeatureName: Attribute.String;
+    racialFeatureEffect: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::racial-feature.racial-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::racial-feature.racial-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSocialSocial extends Schema.CollectionType {
   collectionName: 'socials';
   info: {
@@ -1147,8 +1430,16 @@ declare module '@strapi/types' {
       'plugin::navigation.navigation-item': PluginNavigationNavigationItem;
       'plugin::navigation.navigations-items-related': PluginNavigationNavigationsItemsRelated;
       'api::article.article': ApiArticleArticle;
+      'api::background.background': ApiBackgroundBackground;
+      'api::backstory.backstory': ApiBackstoryBackstory;
+      'api::character.character': ApiCharacterCharacter;
+      'api::class.class': ApiClassClass;
+      'api::class-feature.class-feature': ApiClassFeatureClassFeature;
+      'api::feat.feat': ApiFeatFeat;
       'api::global.global': ApiGlobalGlobal;
       'api::page.page': ApiPagePage;
+      'api::race.race': ApiRaceRace;
+      'api::racial-feature.racial-feature': ApiRacialFeatureRacialFeature;
       'api::social.social': ApiSocialSocial;
     }
   }
