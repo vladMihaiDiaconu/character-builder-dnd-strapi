@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_banners_banner_with_accordions",
+  "info": {
+    "displayName": "Banner With Accordion"
+  },
+  "options": {},
+  "attributes": {
+    "raceForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.race-form"
+    }
+  }
+}

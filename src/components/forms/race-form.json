@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_forms_race_forms",
+  "info": {
+    "displayName": "Race Form"
+  },
+  "options": {},
+  "attributes": {
+    "races": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::race.race"
+    }
+  }
+}

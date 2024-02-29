@@ -22,6 +22,9 @@
     },
     "flavorText": {
       "type": "text"
+    },
+    "abilityScoreIncrease": {
+      "type": "string"
     }
   }
 }

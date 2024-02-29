@@ -1304,7 +1304,9 @@ export interface ApiPagePage extends Schema.CollectionType {
         'banners.hero-banner',
         'misc.stripe',
         'cards.display-card',
-        'banners.cards-and-text-banner'
+        'banners.cards-and-text-banner',
+        'banners.banner-with-accordion',
+        'forms.race-form'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1336,6 +1338,7 @@ export interface ApiRaceRace extends Schema.CollectionType {
       'api::racial-feature.racial-feature'
     >;
     flavorText: Attribute.Text;
+    abilityScoreIncrease: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::race.race', 'oneToOne', 'admin::user'> &

@@ -1,5 +1,15 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BannersBannerWithAccordion extends Schema.Component {
+  collectionName: 'components_banners_banner_with_accordions';
+  info: {
+    displayName: 'Banner With Accordion';
+  };
+  attributes: {
+    raceForm: Attribute.Component<'forms.race-form'>;
+  };
+}
+
 export interface BannersCardsAndTextBanner extends Schema.Component {
   collectionName: 'components_banners_cards_and_text_banners';
   info: {
@@ -43,6 +53,16 @@ export interface CardsDisplayCard extends Schema.Component {
   };
 }
 
+export interface FormsRaceForm extends Schema.Component {
+  collectionName: 'components_forms_race_forms';
+  info: {
+    displayName: 'Race Form';
+  };
+  attributes: {
+    races: Attribute.Relation<'forms.race-form', 'oneToMany', 'api::race.race'>;
+  };
+}
+
 export interface MiscStripe extends Schema.Component {
   collectionName: 'components_misc_stripes';
   info: {
@@ -58,9 +78,11 @@ export interface MiscStripe extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'banners.banner-with-accordion': BannersBannerWithAccordion;
       'banners.cards-and-text-banner': BannersCardsAndTextBanner;
       'banners.hero-banner': BannersHeroBanner;
       'cards.display-card': CardsDisplayCard;
+      'forms.race-form': FormsRaceForm;
       'misc.stripe': MiscStripe;
     }
   }

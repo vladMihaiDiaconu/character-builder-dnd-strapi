@@ -57,7 +57,9 @@
         "banners.hero-banner",
         "misc.stripe",
         "cards.display-card",
-        "banners.cards-and-text-banner"
+        "banners.cards-and-text-banner",
+        "banners.banner-with-accordion",
+        "forms.race-form"
       ]
     }
   }
