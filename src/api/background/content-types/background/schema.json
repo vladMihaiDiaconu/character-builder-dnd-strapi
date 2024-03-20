@@ -4,10 +4,11 @@
   "info": {
     "singularName": "background",
     "pluralName": "backgrounds",
-    "displayName": "Background"
+    "displayName": "Background",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

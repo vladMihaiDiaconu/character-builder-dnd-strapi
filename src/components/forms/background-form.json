@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_forms_background_forms",
+  "info": {
+    "displayName": "Background Form"
+  },
+  "options": {},
+  "attributes": {
+    "backgrounds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::background.background"
+    }
+  }
+}

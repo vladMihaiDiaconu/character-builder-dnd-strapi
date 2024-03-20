@@ -1029,9 +1029,10 @@ export interface ApiBackgroundBackground extends Schema.CollectionType {
     singularName: 'background';
     pluralName: 'backgrounds';
     displayName: 'Background';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     backgroundName: Attribute.String;
@@ -1042,7 +1043,6 @@ export interface ApiBackgroundBackground extends Schema.CollectionType {
     flaws: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::background.background',
       'oneToOne',
@@ -1208,6 +1208,7 @@ export interface ApiClassFeatureClassFeature extends Schema.CollectionType {
   };
   attributes: {
     classFeature: Attribute.JSON;
+    classFeatureName: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

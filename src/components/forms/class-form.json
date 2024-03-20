@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_forms_class_forms",
+  "info": {
+    "displayName": "Class Form"
+  },
+  "options": {},
+  "attributes": {
+    "classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class.class"
+    }
+  }
+}

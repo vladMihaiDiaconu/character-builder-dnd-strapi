@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_banners_resource_log_banners",
+  "info": {
+    "displayName": "Resource Log Banner"
+  },
+  "options": {},
+  "attributes": {
+    "log": {
+      "type": "text"
+    }
+  }
+}

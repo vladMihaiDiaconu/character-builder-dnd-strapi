@@ -1,7 +1,8 @@
 {
   "collectionName": "components_banners_banner_with_accordions",
   "info": {
-    "displayName": "Banner With Accordion"
+    "displayName": "Banner With Accordion",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,6 +10,16 @@
       "type": "component",
       "repeatable": false,
       "component": "forms.race-form"
+    },
+    "classForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.class-form"
+    },
+    "backgroundForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.background-form"
     }
   }
 }

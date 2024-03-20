@@ -4,9 +4,12 @@ export interface BannersBannerWithAccordion extends Schema.Component {
   collectionName: 'components_banners_banner_with_accordions';
   info: {
     displayName: 'Banner With Accordion';
+    description: '';
   };
   attributes: {
     raceForm: Attribute.Component<'forms.race-form'>;
+    classForm: Attribute.Component<'forms.class-form'>;
+    backgroundForm: Attribute.Component<'forms.background-form'>;
   };
 }
 
@@ -39,6 +42,16 @@ export interface BannersHeroBanner extends Schema.Component {
   };
 }
 
+export interface BannersResourceLogBanner extends Schema.Component {
+  collectionName: 'components_banners_resource_log_banners';
+  info: {
+    displayName: 'Resource Log Banner';
+  };
+  attributes: {
+    log: Attribute.Text;
+  };
+}
+
 export interface CardsDisplayCard extends Schema.Component {
   collectionName: 'components_cards_display_cards';
   info: {
@@ -50,6 +63,34 @@ export interface CardsDisplayCard extends Schema.Component {
     buttonLink: Attribute.String;
     imageUrl: Attribute.String;
     imageAlt: Attribute.String;
+  };
+}
+
+export interface FormsBackgroundForm extends Schema.Component {
+  collectionName: 'components_forms_background_forms';
+  info: {
+    displayName: 'Background Form';
+  };
+  attributes: {
+    backgrounds: Attribute.Relation<
+      'forms.background-form',
+      'oneToMany',
+      'api::background.background'
+    >;
+  };
+}
+
+export interface FormsClassForm extends Schema.Component {
+  collectionName: 'components_forms_class_forms';
+  info: {
+    displayName: 'Class Form';
+  };
+  attributes: {
+    classes: Attribute.Relation<
+      'forms.class-form',
+      'oneToMany',
+      'api::class.class'
+    >;
   };
 }
 
@@ -81,7 +122,10 @@ declare module '@strapi/types' {
       'banners.banner-with-accordion': BannersBannerWithAccordion;
       'banners.cards-and-text-banner': BannersCardsAndTextBanner;
       'banners.hero-banner': BannersHeroBanner;
+      'banners.resource-log-banner': BannersResourceLogBanner;
       'cards.display-card': CardsDisplayCard;
+      'forms.background-form': FormsBackgroundForm;
+      'forms.class-form': FormsClassForm;
       'forms.race-form': FormsRaceForm;
       'misc.stripe': MiscStripe;
     }
